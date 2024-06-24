@@ -1,9 +1,6 @@
-/// <reference types="vitest" />
-
 import { defineConfig } from 'vite';
-import analog from '@analogjs/platform';
+import analog, { type PrerenderContentFile } from '@analogjs/platform';
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   build: {
     target: ['es2020'],
@@ -14,7 +11,18 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     analog({
       prerender: {
-        routes: ['/blog', '/blog/2022-12-27-my-first-post'],
+        routes: async () => [
+          '/',
+          '/blog',
+          {
+            contentDir: 'src/content/blog',
+            transform: (file: PrerenderContentFile) => {
+              if (file.attributes['draft']) return false;
+              const slug = file.attributes['slug'] || file.name;
+              return `/blog/${slug}`;
+            },
+          },
+        ],
       },
     }),
   ],
