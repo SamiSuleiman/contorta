@@ -17,10 +17,10 @@ I slowly developed a fitting pattern of knowing what words to google and what to
 After struggling through the first book, I took a long break, but I continued with the series and I got better at it.
 \
 \
-After finishing the series, it was time to move away from sci-fi and into a different genre. Besides, The Expanse had ruined other sci-fi for me because of how good it was.
+After finishing the series, it was time to move away from sci-fi and into a different genre. Besides the fact that The Expanse had ruined other sci-fi for me because of how good it was.
 \
 \
-Crime and Punishment was mentioned in YouTube video I was watching, and the premise intrigued me, so Crime and Punishment it was. I bought the book this time. Hard-cover. And started reading.
+Crime and Punishment was mentioned in a YouTube video I was watching, and the premise intrigued me, so Crime and Punishment it was. I bought the book this time. Hard-cover. And started reading.
 \
 \
 This was a mistake. [Fyodor Dostoevsky](https://en.wikipedia.org/wiki/Fyodor_Dostoevsky)'s writing is dense and complex. The pacing was worlds apart from The Expanse. The names were hard to remember,
