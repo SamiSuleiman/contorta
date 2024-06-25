@@ -21,7 +21,7 @@ import { RouterLink } from '@angular/router';
           [routerLink]="['/blog/', post.attributes.slug]"
           class="hover:underline"
         >
-          <h2 class="post__title">- {{ post.attributes.title }}</h2>
+          <h2>- {{ post.attributes.title }}</h2>
         </a>
         }
       </div>
