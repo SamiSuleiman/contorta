@@ -32,5 +32,10 @@ import { toSignal } from '@angular/core/rxjs-interop';
   standalone: true,
 })
 export default class HomeComponent {
-  readonly $post = toSignal(injectContent<PostAttributes>('slug'));
+  readonly $post = toSignal(
+    injectContent<PostAttributes>({
+      subdirectory: 'blog',
+      param: 'slug',
+    })
+  );
 }
