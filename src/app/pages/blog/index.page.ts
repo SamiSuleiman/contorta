@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <h1>Blog Archive</h1>
+    <h1>Archive</h1>
     @for (post of posts; track post.attributes.slug) {
       <a [routerLink]="['/blog/', post.attributes.slug]">
         <h2 class="post__title">{{ post.attributes.title }}</h2>
@@ -16,20 +16,7 @@ import { RouterLink } from '@angular/router';
       </a>
     }
   `,
-  styles: [
-    `
-      a {
-        text-align: left;
-        display: block;
-        margin-bottom: 2rem;
-      }
-
-      .post__title,
-      .post__desc {
-        margin: 0;
-      }
-    `,
-  ],
+  styles: [``],
 })
 export default class HomeComponent {
   readonly posts = injectContentFiles<PostAttributes>();

@@ -5,12 +5,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  template: `
-    <nav>
-      <a href="/">Home</a>
-    </nav>
-    <router-outlet></router-outlet>
-  `,
+  template: ` <router-outlet></router-outlet> `,
   styles: [
     `
       :host {

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="coffee">
   <head>
     <meta charset="utf-8" />
     <title>My Blog</title>
@@ -7,9 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <app-root></app-root>
+  <body class="w-full">
+    <main class="max-w-xl m-auto p-1">
+      <app-root></app-root>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
