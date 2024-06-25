@@ -8,15 +8,25 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <h1>Archive</h1>
-    @for (post of posts; track post.attributes.slug) {
-      <a [routerLink]="['/blog/', post.attributes.slug]">
-        <h2 class="post__title">{{ post.attributes.title }}</h2>
-        <p class="post__desc">{{ post.attributes.description }}</p>
-      </a>
-    }
+    <div>
+      <div class="breadcrumbs text-sm">
+        <ul>
+          <li [routerLink]="['/']"><a>Home</a></li>
+          <li><a>Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        @for (post of posts; track post.attributes.slug) {
+        <a
+          [routerLink]="['/blog/', post.attributes.slug]"
+          class="hover:underline"
+        >
+          <h2 class="post__title">- {{ post.attributes.title }}</h2>
+        </a>
+        }
+      </div>
+    </div>
   `,
-  styles: [``],
 })
 export default class HomeComponent {
   readonly posts = injectContentFiles<PostAttributes>();

@@ -3,21 +3,34 @@ import { injectContent, MarkdownComponent } from '@analogjs/content';
 import { AsyncPipe } from '@angular/common';
 
 import PostAttributes from '../../post-attributes';
+import { RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'app-blog-post',
-  standalone: true,
-  imports: [AsyncPipe, MarkdownComponent],
   template: `
-    @if (post$ | async; as post) {
-      <article>
-        <img class="post__image" [src]="post.attributes.coverImage" />
-        <analog-markdown [content]="post.content" />
-      </article>
+    <div class="breadcrumbs text-sm">
+      <ul>
+        <li [routerLink]="['/']"><a>Home</a></li>
+        <li [routerLink]="['/blog']"><a>Blog</a></li>
+
+        @if($post(); as post){
+        <li>
+          {{ post.attributes.title }}
+        </li>
+        }
+      </ul>
+    </div>
+    @if ($post(); as post) {
+    <article class="flex flex-col">
+      <img [src]="post.attributes.coverImage" />
+      <analog-markdown [content]="post.content" />
+    </article>
     }
   `,
-  styles: [``],
+  imports: [AsyncPipe, MarkdownComponent, RouterLink],
+  selector: 'app-blog-post',
+  standalone: true,
 })
 export default class HomeComponent {
-  readonly post$ = injectContent<PostAttributes>('slug');
+  readonly $post = toSignal(injectContent<PostAttributes>('slug'));
 }
