@@ -6,6 +6,6 @@ module.exports = {
     extend: {},
   },
   plugins: [daisyui:{
-    themes:["coffee"]
+    themes:["black"]
   }],
 };
